@@ -28,8 +28,14 @@ git add .
 read -r -p "Enter a commit message: " commit_message
 git commit -m "$commit_message"
 
+# Check if the remote "origin" already exists
+existing_remote_url=$(git remote get-url origin 2>/dev/null)
+
 # Add the remote repository URL
-git remote add origin "$remote_repo_url"
+if [ "$existing_remote_url" != "$remote_repo_url" ]; then
+	git remote remove origin 2>dev/null
+	git remote add origin "$remote_repo_url"
+fi
 
 # Push the changes to the remote repository
 git push -u origin master
