@@ -9,11 +9,11 @@ read num2
 echo "please enter the operator (+, -, *, /): "
 read op
 
-if ["$op" == "+" ] ; then
+if [ "$op" == "+" ]; then
 	result=$((num1 + num2))
-elif [ "$op" == "-" ] ; then 
+elif [ "$op" == "-" ]; then 
 	result=$((num1 - num2))
-elif [ "$op" ==  "*" ] ; then 
+elif [ "$op" ==  "*" ]; then 
 	result $((num1 * num2))
 elif [ "$op" == "/" ]; then 
 	result $(( num1/ num2))
