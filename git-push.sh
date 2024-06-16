@@ -25,7 +25,7 @@ fi
 git add .
 
 # Commit the changes with a message
-read -r -p "Enter a commit message: " commit_message
+commit_message="Automated commit"
 git commit -m "$commit_message"
 
 # Check if the remote "origin" already exists
